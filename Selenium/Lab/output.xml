@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.3 on win32)" generated="2025-06-11T12:12:13.318994" rpa="false" schemaversion="5">
+<suite id="s1" name="Window" source="C:\Users\srirx\PycharmProjects\RoboFrame\Selenium\Lab\Window.robot">
+<test id="s1-t1" name="Actions" line="10">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:12:13.891633" level="INFO">Opening browser 'chrome' to base url 'https://jqueryui.com/tabs/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-11T12:12:13.891052" elapsed="4.341022"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-11T12:12:18.232930" elapsed="0.044622"/>
+</kw>
+<kw name="Select Frame" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:12:18.278730" level="INFO">Selecting frame 'xpath://iframe[@class='demo-frame']'.</msg>
+<arg>xpath://iframe[@class='demo-frame']</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="PASS" start="2025-06-11T12:12:18.278191" elapsed="0.053142"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:12:18.332209" level="INFO">Clicking element 'css=#ui-id-1'.</msg>
+<arg>css=#ui-id-1</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:12:18.331894" elapsed="0.193379"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-11T12:12:20.526856" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-11T12:12:18.525934" elapsed="2.001248"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:12:20.528441" level="INFO">Clicking element 'css=#ui-id-2'.</msg>
+<arg>css=#ui-id-2</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:12:20.527828" elapsed="0.178374"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-11T12:12:22.707580" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-11T12:12:20.706968" elapsed="2.000928"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-11T12:12:22.709092" level="INFO">Clicking element 'css=#ui-id-3'.</msg>
+<arg>css=#ui-id-3</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T12:12:22.708516" elapsed="0.207583"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-11T12:12:24.917943" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-11T12:12:22.917012" elapsed="2.001252"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-11T12:12:24.919090" elapsed="2.506677"/>
+</kw>
+<status status="PASS" start="2025-06-11T12:12:13.889090" elapsed="13.537411"/>
+</test>
+<status status="PASS" start="2025-06-11T12:12:13.323399" elapsed="14.105689"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Window" id="s1" pass="1" fail="0" skip="0">Window</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

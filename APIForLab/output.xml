@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.3 on win32)" generated="2025-06-12T14:05:21.465733" rpa="false" schemaversion="5">
+<suite id="s1" name="DELETE" source="C:\Users\srirx\PycharmProjects\RoboFrame\APIForLab\DELETE.robot">
+<test id="s1-t1" name="PUT Video Game" line="12">
+<kw name="create new session" owner="Context">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-12T14:05:22.146008" level="INFO">${auth_payload} = {'username': 'admin', 'password': 'admin'}</msg>
+<var>${auth_payload}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-12T14:05:22.145336" elapsed="0.000750"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-12T14:05:22.146990" level="INFO">Creating Session using : alias=auth_session, url=https://videogamedb.uk, headers=,                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>auth_session</arg>
+<arg>${base_url}</arg>
+<arg>headers=</arg>
+<arg>verify=False</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-12T14:05:22.146312" elapsed="0.001020"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-12T14:05:22.147980" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-12T14:05:22.147542" elapsed="0.000491"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-06-12T14:05:22.566602" level="INFO">POST Request : url=https://videogamedb.uk/api/authenticate 
+ path_url=/api/authenticate 
+ headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '42'} 
+ body=b'{"username": "admin", "password": "admin"}' 
+ </msg>
+<msg time="2025-06-12T14:05:22.566835" level="INFO">POST Response : url=https://videogamedb.uk/api/authenticate 
+ status=200, reason= 
+ headers={'vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'cache-control': 'no-cache, no-store, max-age=0, must-revalidate', 'pragma': 'no-cache', 'expires': '0', 'x-frame-options': 'DENY', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'date': 'Thu, 12 Jun 2025 08:35:22 GMT', 'server': 'Fly/3e8bebaf (2025-06-05)', 'via': '1.1 fly.io, 1.1 fly.io', 'fly-request-id': '01JXHMF313NCECV4G2ASVZZJT5-bom', 'content-encoding': 'gzip'} 
+ body={"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc0OTcxNzMyMiwiZXhwIjoxNzQ5NzIwOTIyfQ.ZacfFLf44HMSzlGOPEEmzesrIwSwWBGbajBB40xRJzs"} 
+ </msg>
+<msg time="2025-06-12T14:05:22.567387" level="INFO">C:\Users\srirx\PycharmProjects\RoboFrame\.venv\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'videogamedb.uk'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-06-12T14:05:22.651728" level="INFO">${auth_response} = &lt;Response [200]&gt;</msg>
+<var>${auth_response}</var>
+<arg>auth_session</arg>
+<arg>${auth_endpoint}</arg>
+<arg>json=${auth_payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-12T14:05:22.148213" elapsed="0.503597"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-06-12T14:05:22.653129" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${auth_response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-06-12T14:05:22.652109" elapsed="0.001150"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-06-12T14:05:22.654268" level="INFO">${token} = eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc0OTcxNzMyMiwiZXhwIjoxNzQ5NzIwOTIyfQ.ZacfFLf44HMSzlGOPEEmzesrIwSwWBGbajBB40xRJzs</msg>
+<var>${token}</var>
+<arg>${auth_response.json()}</arg>
+<arg>token</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-06-12T14:05:22.653498" elapsed="0.000817"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${token}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-12T14:05:22.654519" elapsed="0.002480"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-12T14:05:22.657683" level="INFO">&amp;{headers} = { Content-Type=application/json | Authorization=Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc0OTcxNzMyMiwiZXhwIjoxNzQ5NzIwOTIyfQ.ZacfFLf44HMSzlGOPEEmzesrIwSwWBGbajBB40xRJzs }</msg>
+<var>&amp;{headers}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Authorization=Bearer ${token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-12T14:05:22.657242" elapsed="0.000495"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-06-12T14:05:22.660056" level="INFO">Creating Session using : alias=delete, url=https://videogamedb.uk, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc0OTcxNzMyMiwiZXhwIjoxNzQ5NzIwOTIyfQ.ZacfFLf44HMSzlGOPEEmzesrIwSwWBGbajBB40xRJzs'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>${alias}</arg>
+<arg>${base_url}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=False</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-06-12T14:05:22.657886" elapsed="0.002476"/>
+</kw>
+<arg>delete</arg>
+<status status="PASS" start="2025-06-12T14:05:22.144135" elapsed="0.516408"/>
+</kw>
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-06-12T14:05:23.079184" level="INFO">DELETE Request : url=https://videogamedb.uk/api/videogame/1 
+ path_url=/api/videogame/1 
+ headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc0OTcxNzMyMiwiZXhwIjoxNzQ5NzIwOTIyfQ.ZacfFLf44HMSzlGOPEEmzesrIwSwWBGbajBB40xRJzs', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-06-12T14:05:23.079390" level="INFO">DELETE Response : url=https://videogamedb.uk/api/videogame/1 
+ status=200, reason= 
+ headers={'vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'cache-control': 'no-cache, no-store, max-age=0, must-revalidate', 'pragma': 'no-cache', 'expires': '0', 'x-frame-options': 'DENY', 'content-type': 'text/plain;charset=UTF-8', 'content-encoding': 'gzip', 'date': 'Thu, 12 Jun 2025 08:35:22 GMT', 'server': 'Fly/3e8bebaf (2025-06-05)', 'via': '1.1 fly.io, 1.1 fly.io', 'fly-request-id': '01JXHMF3H338W1HNZATJY84FWK-bom', 'transfer-encoding': 'chunked'} 
+ body=Video game deleted 
+ </msg>
+<msg time="2025-06-12T14:05:23.079531" level="INFO">C:\Users\srirx\PycharmProjects\RoboFrame\.venv\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'videogamedb.uk'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-06-12T14:05:23.122515" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>delete</arg>
+<arg>${ENDPOINT}/${id}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-06-12T14:05:22.668061" elapsed="0.454552"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-12T14:05:23.125118" level="INFO">200</msg>
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-12T14:05:23.123836" elapsed="0.001414"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2025-06-12T14:05:23.134671" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-06-12T14:05:23.133822" elapsed="0.000965"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-12T14:05:23.163152" level="INFO">Video game deleted</msg>
+<arg>${response.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-12T14:05:23.151252" elapsed="0.012052"/>
+</kw>
+<status status="PASS" start="2025-06-12T14:05:22.141364" elapsed="1.028521"/>
+</test>
+<status status="PASS" start="2025-06-12T14:05:21.470912" elapsed="1.710300"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="DELETE" id="s1" pass="1" fail="0" skip="0">DELETE</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

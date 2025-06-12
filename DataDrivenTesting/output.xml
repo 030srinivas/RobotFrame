@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.3 on win32)" generated="2025-06-12T09:53:17.176280" rpa="false" schemaversion="5">
+<suite id="s1" name="Lab1" source="C:\Users\srirx\PycharmProjects\RoboFrame\DataDrivenTesting\Lab1.robot">
+<kw name="Launch App" owner="DDTlab" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:17.781465" level="INFO">Opening browser 'chrome' to base url 'https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-12T09:53:17.781020" elapsed="2.777676"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-12T09:53:20.559432" elapsed="0.647284"/>
+</kw>
+<status status="PASS" start="2025-06-12T09:53:17.780012" elapsed="3.426941"/>
+</kw>
+<test id="s1-t1" name="Register Student Test" line="13">
+<kw name="Student form">
+<kw name="Set Name" owner="DDTlab">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:21.210710" level="INFO">Typing text 'John Doe' into text field 'xpath://input[@id='name']'.</msg>
+<arg>xpath://input[@id='name']</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T09:53:21.210202" elapsed="0.223505"/>
+</kw>
+<arg>${Name}</arg>
+<status status="PASS" start="2025-06-12T09:53:21.209826" elapsed="0.224122"/>
+</kw>
+<kw name="Set Email" owner="DDTlab">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:21.435102" level="INFO">Typing text 'john@example.com' into text field 'xpath://input[@id='email']'.</msg>
+<arg>xpath://input[@id='email']</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T09:53:21.434768" elapsed="0.232865"/>
+</kw>
+<arg>${Email}</arg>
+<status status="PASS" start="2025-06-12T09:53:21.434256" elapsed="0.233646"/>
+</kw>
+<kw name="Set Gender" owner="DDTlab">
+<if>
+<branch type="IF" condition="'${gender}' == 'Male'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:21.670032" level="INFO">Clicking element 'xpath://input[@id='gender']'.</msg>
+<arg>xpath://input[@id='gender']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T09:53:21.669608" elapsed="0.120905"/>
+</kw>
+<status status="PASS" start="2025-06-12T09:53:21.669102" elapsed="0.121606"/>
+</branch>
+<branch type="ELSE IF" condition="'${gender}' == 'Female'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://div[3]//div[1]//div[1]//div[2]//input[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-12T09:53:21.791177" elapsed="0.000067"/>
+</kw>
+<status status="NOT RUN" start="2025-06-12T09:53:21.790835" elapsed="0.000488"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://div[3]//div[1]//div[1]//div[3]//input[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-12T09:53:21.791611" elapsed="0.000055"/>
+</kw>
+<status status="NOT RUN" start="2025-06-12T09:53:21.791396" elapsed="0.000344"/>
+</branch>
+<status status="PASS" start="2025-06-12T09:53:21.669029" elapsed="0.122770"/>
+</if>
+<arg>${Gender}</arg>
+<status status="PASS" start="2025-06-12T09:53:21.668428" elapsed="0.123491"/>
+</kw>
+<kw name="Set Mobile" owner="DDTlab">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:21.793129" level="INFO">Typing text '1234567890' into text field 'xpath://input[@id='mobile']'.</msg>
+<arg>xpath://input[@id='mobile']</arg>
+<arg>${number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T09:53:21.792740" elapsed="0.168552"/>
+</kw>
+<arg>${Mobile}</arg>
+<status status="PASS" start="2025-06-12T09:53:21.792206" elapsed="0.169310"/>
+</kw>
+<kw name="Set DOB" owner="DDTlab">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:21.964170" level="INFO">Clicking element 'xpath://input[@id='dob']'.</msg>
+<arg>xpath://input[@id='dob']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T09:53:21.963235" elapsed="0.126177"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:22.090821" level="INFO">Sending key(s) ('01-01-1990',) to xpath://input[@id='dob'] element.</msg>
+<msg time="2025-06-12T09:53:22.432589" level="INFO">Sending keys 01-01-1990</msg>
+<arg>xpath://input[@id='dob']</arg>
+<arg>${date}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-06-12T09:53:22.089804" elapsed="0.498666"/>
+</kw>
+<arg>${DateOfBirth}</arg>
+<status status="PASS" start="2025-06-12T09:53:21.961877" elapsed="0.626870"/>
+</kw>
+<kw name="Set Subject" owner="DDTlab">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:22.590217" level="INFO">Typing text 'Math' into text field '//input[@id='subjects']'.</msg>
+<arg>//input[@id='subjects']</arg>
+<arg>${subject}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T09:53:22.589784" elapsed="0.162825"/>
+</kw>
+<arg>${Subject}</arg>
+<status status="PASS" start="2025-06-12T09:53:22.589116" elapsed="0.163730"/>
+</kw>
+<kw name="Set Current Address" owner="DDTlab">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:22.754279" level="INFO">Typing text '123 Main St' into text field 'xpath://textarea[@id='picture']'.</msg>
+<arg>xpath://textarea[@id='picture']</arg>
+<arg>${address}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T09:53:22.753844" elapsed="0.138147"/>
+</kw>
+<arg>${address}</arg>
+<status status="PASS" start="2025-06-12T09:53:22.753189" elapsed="0.139012"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T09:53:25.012468" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T09:53:22.892537" elapsed="2.120176"/>
+</kw>
+<kw name="Click Submit" owner="DDTlab">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T09:53:26.014502" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T09:53:25.013693" elapsed="1.001062"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:26.015476" level="INFO">Clicking element '//input[@value='Login']'.</msg>
+<msg time="2025-06-12T09:53:27.354881" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-36.png"&gt;&lt;img src="selenium-screenshot-36.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-12T09:53:27.355296" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (1121, 733)
+  (Session info: chrome=137.0.7151.103)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff79ea3fe75+79173]
+	GetHandleVerifier [0x0x7ff79ea3fed0+79264]
+	(No symbol) [0x0x7ff79e7f9e5a]
+	(No symbol) [0x0x7ff79e858599]
+	(No symbol) [0x0x7ff79e855f32]
+	(No symbol) [0x0x7ff79e852f71]
+	(No symbol) [0x0x7ff79e851e61]
+	(No symbol) [0x0x7ff79e843464]
+	(No symbol) [0x0x7ff79e87896a]
+	(No symbol) [0x0x7ff79e842d16]
+	(No symbol) [0x0x7ff79e878b80]
+	(No symbol) [0x0x7ff79e8a100d]
+	(No symbol) [0x0x7ff79e878743]
+	(No symbol) [0x0x7ff79e8414c1]
+	(No symbol) [0x0x7ff79e842253]
+	GetHandleVerifier [0x0x7ff79ed0a2ad+3004797]
+	GetHandleVerifier [0x0x7ff79ed046fd+2981325]
+	GetHandleVerifier [0x0x7ff79ed23350+3107360]
+	GetHandleVerifier [0x0x7ff79ea5a9fe+188622]
+	GetHandleVerifier [0x0x7ff79ea6228f+219487]
+	GetHandleVerifier [0x0x7ff79ea48dc4+115860]
+	GetHandleVerifier [0x0x7ff79ea48f79+116297]
+	GetHandleVerifier [0x0x7ff79ea2f528+11256]
+	BaseThreadInitThunk [0x0x7ff9e828e8d7+23]
+	RtlUserThreadStart [0x0x7ff9e985c5dc+44]
+</msg>
+<arg>//input[@value='Login']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-06-12T09:53:26.015101" elapsed="1.347833">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (1121, 733)
+  (Session info: chrome=137.0.7151.103)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff79ea3fe75+79173]
+	GetHandleVerifier [0x0x7ff79ea3fed0+79264]
+	(No symbol) [0x0x7ff79e7f9e5a]
+	(No symbol) [0x0x7ff79e858599]
+	(No symbol) [0x0x7ff79e855f32]
+	(No symbol) [0x0x7ff79e852f71]
+	(No symbol) [0x0x7ff79e851e61]
+	(No symbol) [0x0x7ff79e843464]
+	(No symbol) [0x0x7ff79e87896a]
+	(No symbol) [0x0x7ff79e842d16]
+	(No symbol) [0x0x7ff79e878b80]
+	(No symbol) [0x0x7ff79e8a100d]
+	(No symbol) [0x0x7ff79e878743]
+	(No symbol) [0x0x7ff79e8414c1]
+	(No symbol) [0x0x7ff79e842253]
+	GetHandleVerifier [0x0x7ff79ed0a2ad+3004797]
+	GetHandleVerifier [0x0x7ff79ed046fd+2981325]
+	GetHandleVerifier [0x0x7ff79ed23350+3107360]
+	GetHandleVerifier [0x0x7ff79ea5a9fe+188622]
+	GetHandleVerifier [0x0x7ff79ea6228f+219487]
+	GetHandleVerifier [0x0x7ff79ea48dc4+115860]
+	GetHandleVerifier [0x0x7ff79ea48f79+116297]
+	GetHandleVerifier [0x0x7ff79ea2f528+11256]
+	BaseThreadInitThunk [0x0x7ff9e828e8d7+23]
+	RtlUserThreadStart [0x0x7ff9e985c5dc+44]
+</status>
+</kw>
+<status status="FAIL" start="2025-06-12T09:53:25.013139" elapsed="2.350192">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (1121, 733)
+  (Session info: chrome=137.0.7151.103)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff79ea3fe75+79173]
+	GetHandleVerifier [0x0x7ff79ea3fed0+79264]
+	(No symbol) [0x0x7ff79e7f9e5a]
+	(No symbol) [0x0x7ff79e858599]
+	(No symbol) [0x0x7ff79e855f32]
+	(No symbol) [0x0x7ff79e852f71]
+	(No symbol) [0x0x7ff79e851e61]
+	(No symbol) [0x0x7ff79e843464]
+	(No symbol) [0x0x7ff79e87896a]
+	(No symbol) [0x0x7ff79e842d16]
+	(No symbol) [0x0x7ff79e878b80]
+	(No symbol) [0x0x7ff79e8a100d]
+	(No symbol) [0x0x7ff79e878743]
+	(No symbol) [0x0x7ff79e8414c1]
+	(No symbol) [0x0x7ff79e842253]
+	GetHandleVerifier [0x0x7ff79ed0a2ad+3004797]
+	GetHandleVerifier [0x0x7ff79ed046fd+2981325]
+	GetHandleVerifier [0x0x7ff79ed23350+3107360]
+	GetHandleVerifier [0x0x7ff79ea5a9fe+188622]
+	GetHandleVerifier [0x0x7ff79ea6228f+219487]
+	GetHandleVerifier [0x0x7ff79ea48dc4+115860]
+	GetHandleVerifier [0x0x7ff79ea48f79+116297]
+	GetHandleVerifier [0x0x7ff79ea2f528+11256]
+	BaseThreadInitThunk [0x0x7ff9e828e8d7+23]
+	RtlUserThreadStart [0x0x7ff9e985c5dc+44]
+</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-06-12T09:53:27.363634" elapsed="0.000085"/>
+</kw>
+<arg>Name=John Doe</arg>
+<arg>Email=john@example.com</arg>
+<arg>Gender=Male</arg>
+<arg>Mobile=1234567890</arg>
+<arg>DateOfBirth=01-01-1990</arg>
+<arg>Subject=Math</arg>
+<arg>address=123 Main St</arg>
+<status status="FAIL" start="2025-06-12T09:53:21.209202" elapsed="6.154740">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (1121, 733)
+  (Session info: chrome=137.0.7151.103)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff79ea3fe75+79173]
+	GetHandleVerifier [0x0x7ff79ea3fed0+79264]
+	(No symbol) [0x0x7ff79e7f9e5a]
+	(No symbol) [0x0x7ff79e858599]
+	(No symbol) [0x0x7ff79e855f32]
+	(No symbol) [0x0x7ff79e852f71]
+	(No symbol) [0x0x7ff79e851e61]
+	(No symbol) [0x0x7ff79e843464]
+	(No symbol) [0x0x7ff79e87896a]
+	(No symbol) [0x0x7ff79e842d16]
+	(No symbol) [0x0x7ff79e878b80]
+	(No symbol) [0x0x7ff79e8a100d]
+	(No symbol) [0x0x7ff79e878743]
+	(No symbol) [0x0x7ff79e8414c1]
+	(No symbol) [0x0x7ff79e842253]
+	GetHandleVerifier [0x0x7ff79ed0a2ad+3004797]
+	GetHandleVerifier [0x0x7ff79ed046fd+2981325]
+	GetHandleVerifier [0x0x7ff79ed23350+3107360]
+	GetHandleVerifier [0x0x7ff79ea5a9fe+188622]
+	GetHandleVerifier [0x0x7ff79ea6228f+219487]
+	GetHandleVerifier [0x0x7ff79ea48dc4+115860]
+	GetHandleVerifier [0x0x7ff79ea48f79+116297]
+	GetHandleVerifier [0x0x7ff79ea2f528+11256]
+	BaseThreadInitThunk [0x0x7ff9e828e8d7+23]
+	RtlUserThreadStart [0x0x7ff9e985c5dc+44]
+</status>
+</kw>
+<status status="FAIL" start="2025-06-12T09:53:21.207105" elapsed="6.157685">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (1121, 733)
+  (Session info: chrome=137.0.7151.103)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff79ea3fe75+79173]
+	GetHandleVerifier [0x0x7ff79ea3fed0+79264]
+	(No symbol) [0x0x7ff79e7f9e5a]
+	(No symbol) [0x0x7ff79e858599]
+	(No symbol) [0x0x7ff79e855f32]
+	(No symbol) [0x0x7ff79e852f71]
+	(No symbol) [0x0x7ff79e851e61]
+	(No symbol) [0x0x7ff79e843464]
+	(No symbol) [0x0x7ff79e87896a]
+	(No symbol) [0x0x7ff79e842d16]
+	(No symbol) [0x0x7ff79e878b80]
+	(No symbol) [0x0x7ff79e8a100d]
+	(No symbol) [0x0x7ff79e878743]
+	(No symbol) [0x0x7ff79e8414c1]
+	(No symbol) [0x0x7ff79e842253]
+	GetHandleVerifier [0x0x7ff79ed0a2ad+3004797]
+	GetHandleVerifier [0x0x7ff79ed046fd+2981325]
+	GetHandleVerifier [0x0x7ff79ed23350+3107360]
+	GetHandleVerifier [0x0x7ff79ea5a9fe+188622]
+	GetHandleVerifier [0x0x7ff79ea6228f+219487]
+	GetHandleVerifier [0x0x7ff79ea48dc4+115860]
+	GetHandleVerifier [0x0x7ff79ea48f79+116297]
+	GetHandleVerifier [0x0x7ff79ea2f528+11256]
+	BaseThreadInitThunk [0x0x7ff9e828e8d7+23]
+	RtlUserThreadStart [0x0x7ff9e985c5dc+44]
+</status>
+</test>
+<test id="s1-t2" name="Register Student Test" line="13">
+<kw name="Student form">
+<kw name="Set Name" owner="DDTlab">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:27.375191" level="INFO">Typing text 'Jane Smith' into text field 'xpath://input[@id='name']'.</msg>
+<arg>xpath://input[@id='name']</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T09:53:27.374656" elapsed="0.195957"/>
+</kw>
+<arg>${Name}</arg>
+<status status="PASS" start="2025-06-12T09:53:27.374021" elapsed="0.196826"/>
+</kw>
+<kw name="Set Email" owner="DDTlab">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:27.571518" level="INFO">Typing text 'jane@example.com' into text field 'xpath://input[@id='email']'.</msg>
+<arg>xpath://input[@id='email']</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T09:53:27.571351" elapsed="0.155176"/>
+</kw>
+<arg>${Email}</arg>
+<status status="PASS" start="2025-06-12T09:53:27.571089" elapsed="0.155691"/>
+</kw>
+<kw name="Set Gender" owner="DDTlab">
+<if>
+<branch type="IF" condition="'${gender}' == 'Male'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://input[@id='gender']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-12T09:53:27.728526" elapsed="0.000079"/>
+</kw>
+<status status="NOT RUN" start="2025-06-12T09:53:27.727968" elapsed="0.000742"/>
+</branch>
+<branch type="ELSE IF" condition="'${gender}' == 'Female'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:27.729444" level="INFO">Clicking element 'xpath://div[3]//div[1]//div[1]//div[2]//input[1]'.</msg>
+<arg>xpath://div[3]//div[1]//div[1]//div[2]//input[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T09:53:27.729108" elapsed="0.161870"/>
+</kw>
+<status status="PASS" start="2025-06-12T09:53:27.728797" elapsed="0.162357"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://div[3]//div[1]//div[1]//div[3]//input[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-12T09:53:27.891970" elapsed="0.000082"/>
+</kw>
+<status status="NOT RUN" start="2025-06-12T09:53:27.891455" elapsed="0.000698"/>
+</branch>
+<status status="PASS" start="2025-06-12T09:53:27.727907" elapsed="0.164319"/>
+</if>
+<arg>${Gender}</arg>
+<status status="PASS" start="2025-06-12T09:53:27.727298" elapsed="0.168475"/>
+</kw>
+<kw name="Set Mobile" owner="DDTlab">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:27.899580" level="INFO">Typing text '0987654321' into text field 'xpath://input[@id='mobile']'.</msg>
+<arg>xpath://input[@id='mobile']</arg>
+<arg>${number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T09:53:27.898553" elapsed="0.216804"/>
+</kw>
+<arg>${Mobile}</arg>
+<status status="PASS" start="2025-06-12T09:53:27.896239" elapsed="0.219407"/>
+</kw>
+<kw name="Set DOB" owner="DDTlab">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:28.116891" level="INFO">Clicking element 'xpath://input[@id='dob']'.</msg>
+<arg>xpath://input[@id='dob']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T09:53:28.116555" elapsed="0.092460"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:28.210240" level="INFO">Sending key(s) ('15-05-1992',) to xpath://input[@id='dob'] element.</msg>
+<msg time="2025-06-12T09:53:28.540899" level="INFO">Sending keys 15-05-1992</msg>
+<arg>xpath://input[@id='dob']</arg>
+<arg>${date}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-06-12T09:53:28.209396" elapsed="0.503985"/>
+</kw>
+<arg>${DateOfBirth}</arg>
+<status status="PASS" start="2025-06-12T09:53:28.115974" elapsed="0.597658"/>
+</kw>
+<kw name="Set Subject" owner="DDTlab">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:28.715092" level="INFO">Typing text 'English' into text field '//input[@id='subjects']'.</msg>
+<arg>//input[@id='subjects']</arg>
+<arg>${subject}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T09:53:28.714685" elapsed="0.234053"/>
+</kw>
+<arg>${Subject}</arg>
+<status status="PASS" start="2025-06-12T09:53:28.714007" elapsed="0.234923"/>
+</kw>
+<kw name="Set Current Address" owner="DDTlab">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:28.949974" level="INFO">Typing text '456 Elm St' into text field 'xpath://textarea[@id='picture']'.</msg>
+<arg>xpath://textarea[@id='picture']</arg>
+<arg>${address}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-12T09:53:28.949657" elapsed="0.143497"/>
+</kw>
+<arg>${address}</arg>
+<status status="PASS" start="2025-06-12T09:53:28.949199" elapsed="0.144085"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T09:53:31.094045" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T09:53:29.093433" elapsed="2.000838"/>
+</kw>
+<kw name="Click Submit" owner="DDTlab">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-12T09:53:32.099089" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-12T09:53:31.095077" elapsed="1.004304"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-12T09:53:32.100888" level="INFO">Clicking element '//input[@value='Login']'.</msg>
+<msg time="2025-06-12T09:53:33.454180" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-37.png"&gt;&lt;img src="selenium-screenshot-37.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-12T09:53:33.454587" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (1121, 726)
+  (Session info: chrome=137.0.7151.103)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff79ea3fe75+79173]
+	GetHandleVerifier [0x0x7ff79ea3fed0+79264]
+	(No symbol) [0x0x7ff79e7f9e5a]
+	(No symbol) [0x0x7ff79e858599]
+	(No symbol) [0x0x7ff79e855f32]
+	(No symbol) [0x0x7ff79e852f71]
+	(No symbol) [0x0x7ff79e851e61]
+	(No symbol) [0x0x7ff79e843464]
+	(No symbol) [0x0x7ff79e87896a]
+	(No symbol) [0x0x7ff79e842d16]
+	(No symbol) [0x0x7ff79e878b80]
+	(No symbol) [0x0x7ff79e8a100d]
+	(No symbol) [0x0x7ff79e878743]
+	(No symbol) [0x0x7ff79e8414c1]
+	(No symbol) [0x0x7ff79e842253]
+	GetHandleVerifier [0x0x7ff79ed0a2ad+3004797]
+	GetHandleVerifier [0x0x7ff79ed046fd+2981325]
+	GetHandleVerifier [0x0x7ff79ed23350+3107360]
+	GetHandleVerifier [0x0x7ff79ea5a9fe+188622]
+	GetHandleVerifier [0x0x7ff79ea6228f+219487]
+	GetHandleVerifier [0x0x7ff79ea48dc4+115860]
+	GetHandleVerifier [0x0x7ff79ea48f79+116297]
+	GetHandleVerifier [0x0x7ff79ea2f528+11256]
+	BaseThreadInitThunk [0x0x7ff9e828e8d7+23]
+	RtlUserThreadStart [0x0x7ff9e985c5dc+44]
+</msg>
+<arg>//input[@value='Login']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-06-12T09:53:32.099803" elapsed="1.357810">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (1121, 726)
+  (Session info: chrome=137.0.7151.103)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff79ea3fe75+79173]
+	GetHandleVerifier [0x0x7ff79ea3fed0+79264]
+	(No symbol) [0x0x7ff79e7f9e5a]
+	(No symbol) [0x0x7ff79e858599]
+	(No symbol) [0x0x7ff79e855f32]
+	(No symbol) [0x0x7ff79e852f71]
+	(No symbol) [0x0x7ff79e851e61]
+	(No symbol) [0x0x7ff79e843464]
+	(No symbol) [0x0x7ff79e87896a]
+	(No symbol) [0x0x7ff79e842d16]
+	(No symbol) [0x0x7ff79e878b80]
+	(No symbol) [0x0x7ff79e8a100d]
+	(No symbol) [0x0x7ff79e878743]
+	(No symbol) [0x0x7ff79e8414c1]
+	(No symbol) [0x0x7ff79e842253]
+	GetHandleVerifier [0x0x7ff79ed0a2ad+3004797]
+	GetHandleVerifier [0x0x7ff79ed046fd+2981325]
+	GetHandleVerifier [0x0x7ff79ed23350+3107360]
+	GetHandleVerifier [0x0x7ff79ea5a9fe+188622]
+	GetHandleVerifier [0x0x7ff79ea6228f+219487]
+	GetHandleVerifier [0x0x7ff79ea48dc4+115860]
+	GetHandleVerifier [0x0x7ff79ea48f79+116297]
+	GetHandleVerifier [0x0x7ff79ea2f528+11256]
+	BaseThreadInitThunk [0x0x7ff9e828e8d7+23]
+	RtlUserThreadStart [0x0x7ff9e985c5dc+44]
+</status>
+</kw>
+<status status="FAIL" start="2025-06-12T09:53:31.094648" elapsed="2.363364">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (1121, 726)
+  (Session info: chrome=137.0.7151.103)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff79ea3fe75+79173]
+	GetHandleVerifier [0x0x7ff79ea3fed0+79264]
+	(No symbol) [0x0x7ff79e7f9e5a]
+	(No symbol) [0x0x7ff79e858599]
+	(No symbol) [0x0x7ff79e855f32]
+	(No symbol) [0x0x7ff79e852f71]
+	(No symbol) [0x0x7ff79e851e61]
+	(No symbol) [0x0x7ff79e843464]
+	(No symbol) [0x0x7ff79e87896a]
+	(No symbol) [0x0x7ff79e842d16]
+	(No symbol) [0x0x7ff79e878b80]
+	(No symbol) [0x0x7ff79e8a100d]
+	(No symbol) [0x0x7ff79e878743]
+	(No symbol) [0x0x7ff79e8414c1]
+	(No symbol) [0x0x7ff79e842253]
+	GetHandleVerifier [0x0x7ff79ed0a2ad+3004797]
+	GetHandleVerifier [0x0x7ff79ed046fd+2981325]
+	GetHandleVerifier [0x0x7ff79ed23350+3107360]
+	GetHandleVerifier [0x0x7ff79ea5a9fe+188622]
+	GetHandleVerifier [0x0x7ff79ea6228f+219487]
+	GetHandleVerifier [0x0x7ff79ea48dc4+115860]
+	GetHandleVerifier [0x0x7ff79ea48f79+116297]
+	GetHandleVerifier [0x0x7ff79ea2f528+11256]
+	BaseThreadInitThunk [0x0x7ff9e828e8d7+23]
+	RtlUserThreadStart [0x0x7ff9e985c5dc+44]
+</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-06-12T09:53:33.458338" elapsed="0.000175"/>
+</kw>
+<arg>Name=Jane Smith</arg>
+<arg>Email=jane@example.com</arg>
+<arg>Gender=Female</arg>
+<arg>Mobile=0987654321</arg>
+<arg>DateOfBirth=15-05-1992</arg>
+<arg>Subject=English</arg>
+<arg>address=456 Elm St</arg>
+<status status="FAIL" start="2025-06-12T09:53:27.372770" elapsed="6.086289">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (1121, 726)
+  (Session info: chrome=137.0.7151.103)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff79ea3fe75+79173]
+	GetHandleVerifier [0x0x7ff79ea3fed0+79264]
+	(No symbol) [0x0x7ff79e7f9e5a]
+	(No symbol) [0x0x7ff79e858599]
+	(No symbol) [0x0x7ff79e855f32]
+	(No symbol) [0x0x7ff79e852f71]
+	(No symbol) [0x0x7ff79e851e61]
+	(No symbol) [0x0x7ff79e843464]
+	(No symbol) [0x0x7ff79e87896a]
+	(No symbol) [0x0x7ff79e842d16]
+	(No symbol) [0x0x7ff79e878b80]
+	(No symbol) [0x0x7ff79e8a100d]
+	(No symbol) [0x0x7ff79e878743]
+	(No symbol) [0x0x7ff79e8414c1]
+	(No symbol) [0x0x7ff79e842253]
+	GetHandleVerifier [0x0x7ff79ed0a2ad+3004797]
+	GetHandleVerifier [0x0x7ff79ed046fd+2981325]
+	GetHandleVerifier [0x0x7ff79ed23350+3107360]
+	GetHandleVerifier [0x0x7ff79ea5a9fe+188622]
+	GetHandleVerifier [0x0x7ff79ea6228f+219487]
+	GetHandleVerifier [0x0x7ff79ea48dc4+115860]
+	GetHandleVerifier [0x0x7ff79ea48f79+116297]
+	GetHandleVerifier [0x0x7ff79ea2f528+11256]
+	BaseThreadInitThunk [0x0x7ff9e828e8d7+23]
+	RtlUserThreadStart [0x0x7ff9e985c5dc+44]
+</status>
+</kw>
+<status status="FAIL" start="2025-06-12T09:53:27.369075" elapsed="6.091104">ElementClickInterceptedException: Message: element click intercepted: Element is not clickable at point (1121, 726)
+  (Session info: chrome=137.0.7151.103)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff79ea3fe75+79173]
+	GetHandleVerifier [0x0x7ff79ea3fed0+79264]
+	(No symbol) [0x0x7ff79e7f9e5a]
+	(No symbol) [0x0x7ff79e858599]
+	(No symbol) [0x0x7ff79e855f32]
+	(No symbol) [0x0x7ff79e852f71]
+	(No symbol) [0x0x7ff79e851e61]
+	(No symbol) [0x0x7ff79e843464]
+	(No symbol) [0x0x7ff79e87896a]
+	(No symbol) [0x0x7ff79e842d16]
+	(No symbol) [0x0x7ff79e878b80]
+	(No symbol) [0x0x7ff79e8a100d]
+	(No symbol) [0x0x7ff79e878743]
+	(No symbol) [0x0x7ff79e8414c1]
+	(No symbol) [0x0x7ff79e842253]
+	GetHandleVerifier [0x0x7ff79ed0a2ad+3004797]
+	GetHandleVerifier [0x0x7ff79ed046fd+2981325]
+	GetHandleVerifier [0x0x7ff79ed23350+3107360]
+	GetHandleVerifier [0x0x7ff79ea5a9fe+188622]
+	GetHandleVerifier [0x0x7ff79ea6228f+219487]
+	GetHandleVerifier [0x0x7ff79ea48dc4+115860]
+	GetHandleVerifier [0x0x7ff79ea48f79+116297]
+	GetHandleVerifier [0x0x7ff79ea2f528+11256]
+	BaseThreadInitThunk [0x0x7ff9e828e8d7+23]
+	RtlUserThreadStart [0x0x7ff9e985c5dc+44]
+</status>
+</test>
+<kw name="Close App" owner="DDTlab" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-12T09:53:33.465567" elapsed="2.287809"/>
+</kw>
+<status status="PASS" start="2025-06-12T09:53:33.464995" elapsed="2.288616"/>
+</kw>
+<status status="FAIL" start="2025-06-12T09:53:17.180788" elapsed="18.572900"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Lab1" id="s1" pass="0" fail="2" skip="0">Lab1</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-06-12T09:53:27.369316" level="WARN">Multiple tests with name 'Register Student Test' executed in suite 'Lab1'.</msg>
+</errors>
+</robot>
