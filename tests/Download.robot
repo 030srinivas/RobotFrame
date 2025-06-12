@@ -12,7 +12,12 @@ ${url}      https://the-internet.herokuapp.com/download
 *** Test Cases ***
 Selecting the dropdown
         [Documentation]
-        Open Browser        ${url}      ${browser}
+        ${chrome options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
+        Call Method    ${chrome options}    add_argument    --headless
+        Call Method    ${chrome options}    add_argument    --no-sandbox
+        Call Method    ${chrome options}    add_argument    --disable-dev-shm-usage
+        Create WebDriver    Chrome    options=${chrome options}
+        Go To     https://the-internet.herokuapp.com/download
         Maximize Browser Window
         Click Element    //a[normalize-space()='sampleFile.jpeg']
         Sleep    2s
