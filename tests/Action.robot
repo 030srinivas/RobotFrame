@@ -4,21 +4,23 @@ Library     SeleniumLibrary
 
 *** Variables ***
 ${browser}      chrome
-${url}      https://www.amazon.in/
+${url}      https://rahulshettyacademy.com/AutomationPractice/
 
 *** Test Cases ***
-Actions
+Selecting the dropdown
         [Documentation]
-        Open Browser        ${url}      ${browser}
+        ${chrome options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
+        Call Method    ${chrome options}    add_argument    --headless
+        Call Method    ${chrome options}    add_argument    --no-sandbox
+        Call Method    ${chrome options}    add_argument    --disable-dev-shm-usage
+        Create WebDriver    Chrome    options=${chrome options}
+        Go To     https://rahulshettyacademy.com/AutomationPractice/
         Maximize Browser Window
-        Open Context Menu    css:.nav-a[href='/b/32702023031?node=32702023031&ld=AZINSOANavDesktop_T3&ref_=nav_cs_sell_T3']
-        sleep       5s
-        Double Click Element    xpath://a[normalize-space()="Today's Deals"]
-        Sleep    5s
-
-
+        Select From List By Value    id:dropdown-class-example      option1
+        Sleep    2s
+        Select From List By Index    id:dropdown-class-example      2
+        Sleep    2s
+        Select From List By Label    id:dropdown-class-example      Option3
+        Sleep    2s
         Close Browser
-
-        
-
 
